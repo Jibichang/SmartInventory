@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "934602430981",
+    "firebase_url": "https://smartinventory-3d5db.firebaseio.com",
+    "project_id": "smartinventory-3d5db",
+    "storage_bucket": "smartinventory-3d5db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934602430981:android:d543900a3a9a5e13191a6c",
+        "android_client_info": {
+          "package_name": "org.lox.smartinventory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934602430981-q8at22tf601pht8ciol2rsfk5kbbcquo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0IM5zUM8M69HsBmf_fSfkA2GjddpO92A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934602430981-q8at22tf601pht8ciol2rsfk5kbbcquo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
