@@ -11,7 +11,25 @@
     <string name="transferFragment">transferFragment</string>
     <string name="receiveFragment">receiveFragment</string>
 
-    <string-array name="ORG">
+    <string name="tab_receive_receipt">Receipt</string>
+    <string name="tab_receive_lot">Lot</string>
+    <string name="tab_receive_item">Item</string>
+    <string name="tab_receive_project">Project</string>
+
+    <string name="in_item_item">Item / Revision</string>
+    <string name="in_item_des">Description</string>
+
+    <string name="in_item_lot_from">From</string>
+    <string name="in_item_lot_to">To</string>
+
+    <string-array name="receive_list">
+        <item>Item</item>
+        <item>Lot</item>
+        <item>Project</item>
+        <item>Receipt</item>
+    </string-array>
+
+    <string-array name="org_list">
         <item>22ABC</item>
         <item>13DEF</item>
     </string-array>

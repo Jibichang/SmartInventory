@@ -8,11 +8,13 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="org.lox.smartinventory.MainFragment"
-        android:label="fragment_main">
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_detailFragment"
             app:destination="@id/detailFragment"
-            app:popUpTo="@+id/mainFragment"/>
+            app:enterAnim="@anim/fade_in"
+            app:popUpTo="@+id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -38,4 +40,9 @@
         android:name="org.lox.smartinventory.TransferFragment"
         android:label="fragment_transfer"
         tools:layout="@layout/fragment_transfer" />
+    <fragment
+        android:id="@+id/receiveItemFragment"
+        android:name="org.lox.smartinventory.ReceiveItemFragment"
+        android:label="fragment_receive_item"
+        tools:layout="@layout/fragment_receive_item" />
 </navigation>
