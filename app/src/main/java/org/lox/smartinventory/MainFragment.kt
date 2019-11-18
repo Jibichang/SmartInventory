@@ -15,6 +15,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.lox.smartinventory.databinding.FragmentMainBinding
 import org.lox.smartinventory.service.APIUtils
 import retrofit2.Call

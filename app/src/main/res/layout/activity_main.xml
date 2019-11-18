@@ -3,21 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawerLayout"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:headerLayout="@layout/navheader"
-            app:menu="@menu/navmenu" />
-
         <LinearLayout
-            android:id="@+id/relativeLayout"
+            android:id="@+id/Layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -30,7 +22,7 @@
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 app:defaultNavHost="true"
-                app:navGraph="@navigation/navigation"/>
+                app:navGraph="@navigation/navigation" />
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavigationView"
@@ -42,7 +34,7 @@
         </LinearLayout>
 
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+    </RelativeLayout>
 
 
 </layout>

@@ -23,4 +23,19 @@
             android:name="ID"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/moveFragment"
+        android:name="org.lox.smartinventory.MoveFragment"
+        android:label="MoveFragment"
+        tools:layout="@layout/fragment_move"/>
+    <fragment
+        android:id="@+id/receiveFragment"
+        android:name="org.lox.smartinventory.ReceiveFragment"
+        android:label="fragment_receive"
+        tools:layout="@layout/fragment_receive" />
+    <fragment
+        android:id="@+id/transferFragment"
+        android:name="org.lox.smartinventory.TransferFragment"
+        android:label="fragment_transfer"
+        tools:layout="@layout/fragment_transfer" />
 </navigation>

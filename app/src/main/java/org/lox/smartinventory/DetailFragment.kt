@@ -24,7 +24,7 @@ class DetailFragment : Fragment() {
 
         val args = DetailFragmentArgs.fromBundle(arguments!!)
 //        Toast.makeText(context, "NumCorrect: ${args.id}", Toast.LENGTH_LONG).show()
-        binding.textDetail.text = "${args.id} try"
+        binding.textDetail.text = "${args.id}"
         return binding.root
     }
 

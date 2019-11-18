@@ -4,9 +4,12 @@
     <string name="hello">Hello blank fragment</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="home">home</string>
     <string name="receive">receive</string>
     <string name="transfer">transfer</string>
     <string name="move">move order</string>
+    <string name="transferFragment">transferFragment</string>
+    <string name="receiveFragment">receiveFragment</string>
 
     <string-array name="ORG">
         <item>22ABC</item>
