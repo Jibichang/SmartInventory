@@ -56,7 +56,7 @@ class AdapterInventory (var mContext :Context, var list :MutableList<Inventory>)
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val idItem = itemView.findViewById<TextView>(R.id.text_id)
+        private val idItem = itemView.findViewById<TextView>(R.id.text_id)
         val nameItem = itemView.findViewById<TextView>(R.id.text_name)
         val stockItem = itemView.findViewById<TextView>(R.id.text_stock)
         val layout = itemView.findViewById<ConstraintLayout>(R.id.layout_item)
@@ -78,7 +78,7 @@ class AdapterInventory (var mContext :Context, var list :MutableList<Inventory>)
         }
     }
 
-    fun colorStock(number :Int, numberpre :Int, view :TextView){
+    private fun colorStock(number :Int, numberpre :Int, view :TextView){
         if (number < numberpre){
             view.setTextColor(Color.RED)
         } else {
