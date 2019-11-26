@@ -17,7 +17,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import org.lox.smartinventory.databinding.FragmentReceiveBinding
 
 class ReceiveFragment : Fragment() {
-    private lateinit var binding :FragmentReceiveBinding
+    private lateinit var binding: FragmentReceiveBinding
+    private lateinit var inventory: Inventory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,34 +28,46 @@ class ReceiveFragment : Fragment() {
             inflater, R.layout.fragment_receive, container, false)
 
         initSpinnerType()
+        inventory = Inventory("dsf", "Sdffs", "10", "20")
+        inventory.initList()
 
         binding.floatingActionButton.setOnClickListener {
-            binding.layoutInputItem.visibility = View.GONE
-            binding.listResultReceive.visibility = View.VISIBLE
-            binding.textStatusSearch.visibility = View.VISIBLE
-            binding.floatingActionButton.hideKeyboard()
-
-            val input = "${binding.inputTextItemText!!.editText!!.text} \n ${binding.inputTextItemDes!!.editText!!.text}"
+            if (binding.textStatusSearch.visibility == View.VISIBLE) normalSearch() else hideSearch()
+            val input = "${binding.inputTextItemText!!.editText!!.text} ${binding.inputTextItemDes!!.editText!!.text}"
             binding.textStatusSearch.text = input
 
-            val inv = Inventory("dsf", "Sdffs", "10", "20")
-            inv.initList()
-            val adapterInventory = AdapterReceive(context!!.applicationContext, inv.listItem)
-            binding.listResultReceive.layoutManager = LinearLayoutManager(context!!)
-            binding.listResultReceive.adapter = adapterInventory
+            initRecycler()
         }
 
         binding.textStatusSearch.setOnClickListener {
-            binding.layoutInputItem.visibility = View.VISIBLE
-            binding.listResultReceive.visibility = View.GONE
-            binding.textStatusSearch.visibility = View.GONE
+            normalSearch()
         }
         return binding.root
     }
 
-    fun View.hideKeyboard() {
+    private fun normalSearch(){
+        binding.layoutInputItem.visibility = View.VISIBLE
+        binding.listResultReceive.visibility = View.GONE
+        binding.textStatusSearch.visibility = View.GONE
+    }
+
+    private fun hideSearch(){
+        binding.layoutInputItem.visibility = View.GONE
+        binding.listResultReceive.visibility = View.VISIBLE
+        binding.textStatusSearch.visibility = View.VISIBLE
+        binding.floatingActionButton.hideKeyboard()
+    }
+
+    private fun View.hideKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(windowToken, 0)
+    }
+
+    private fun initRecycler(){
+
+        val adapterInventory = AdapterReceive(context!!.applicationContext, inventory.listItem)
+        binding.listResultReceive.layoutManager = LinearLayoutManager(context!!)
+        binding.listResultReceive.adapter = adapterInventory
     }
 
     private fun initSpinnerType(){

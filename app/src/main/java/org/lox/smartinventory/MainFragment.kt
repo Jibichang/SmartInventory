@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.lox.smartinventory.databinding.FragmentMainBinding
 import org.lox.smartinventory.service.APIUtils
@@ -28,14 +30,14 @@ class MainFragment : Fragment() {
         val binding :FragmentMainBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_main, container, false)
 
-//        binding.buttonMain.setOnClickListener {
-//            view : View -> view.findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailFragment())
-//            Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_detailFragment)
-//        }
-
         val inv :Inventory = Inventory("dsf", "Sdffs", "10", "20")
         inv.initList()
         binding.inventory  = inv
+
+        binding.textUsername.setOnClickListener {
+            v: View? -> v?.findNavController()!!.navigate(MainFragmentDirections.actionMainFragmentToProfileFragment())
+            Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_profileFragment)
+        }
 
         val adapterReceive = ArrayAdapter.createFromResource(context,
             R.array.org_list, android.R.layout.simple_spinner_item)

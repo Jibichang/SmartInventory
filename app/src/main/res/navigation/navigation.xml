@@ -15,6 +15,11 @@
             app:destination="@id/detailFragment"
             app:enterAnim="@anim/fade_in"
             app:popUpTo="@+id/mainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/fade_in"
+            app:popUpTo="@+id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -45,4 +50,14 @@
         android:name="org.lox.smartinventory.ReceiveItemFragment"
         android:label="fragment_receive_item"
         tools:layout="@layout/fragment_receive_item" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="org.lox.smartinventory.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fade_out" />
+    </fragment>
 </navigation>

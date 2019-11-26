@@ -22,6 +22,11 @@
     <string name="in_item_lot_from">From</string>
     <string name="in_item_lot_to">To</string>
 
+    <string name="text_confirm">Please type \"confirm\" to confirm.</string>
+    <string name="signout">Sign out</string>
+    <string name="cancel">Cancel</string>
+
+
     <string-array name="receive_list">
         <item>Item</item>
         <item>Lot</item>

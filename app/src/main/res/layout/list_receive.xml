@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         app:cardCornerRadius="3dp"
-        app:cardElevation="3dp"
         app:contentPadding="@dimen/dimen8">
 
         <LinearLayout
@@ -66,7 +65,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:focusableInTouchMode="false"
-                android:inputType="number" />
+                android:inputType="number"
+                android:visibility="gone" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
