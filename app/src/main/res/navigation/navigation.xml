@@ -57,7 +57,6 @@
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:enterAnim="@anim/fade_out" />
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

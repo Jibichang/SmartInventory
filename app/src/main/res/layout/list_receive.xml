@@ -31,16 +31,16 @@
 
                 <TextView
                     android:id="@+id/receive_text_item"
+                    style="@style/titleText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ItemID"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
+                    android:text="ItemID" />
 
                 <TextView
                     android:id="@+id/receive_text_des"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen8"
                     android:text="description" />
 
                 <TextView
@@ -52,12 +52,11 @@
 
             <TextView
                 android:id="@+id/receive_text_stock"
+                style="@style/stockText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen8"
-                android:text="25"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:text="25" />
 
             <EditText
                 android:id="@+id/receive_text_input"

@@ -6,5 +6,15 @@
     <color name="orange">#D33F0F</color>
     <color name="bg_white_trans">#20D5D5D5</color>
     <color name="bg_white">#FFFFFF</color>
-<!--    #009688-->
+
+    <color name="primaryColor">#721964</color>
+    <color name="primaryLightColor">#A34A92</color>
+    <color name="primaryDarkColor">#430039</color>
+    <color name="secondaryColor">#1ABB9C</color>
+    <color name="secondaryLightColor">#62eecd</color>
+    <color name="secondaryDarkColor">#008A6E</color>
+    <color name="primaryTextColor">#FFFFFF</color>
+    <color name="secondaryTextColor">#000000</color>
+    <color name="primaryBackground">#F7F7F7</color>
+    <color name="trans">#00FFFFFF</color>
 </resources>
