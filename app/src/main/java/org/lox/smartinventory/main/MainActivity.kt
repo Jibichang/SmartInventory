@@ -1,17 +1,15 @@
-package org.lox.smartinventory
+package org.lox.smartinventory.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import kotlinx.android.synthetic.main.activity_main.*
 import org.lox.smartinventory.databinding.ActivityMainBinding
 import androidx.navigation.*
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.lox.smartinventory.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar!!.hide()
         @Suppress("UNUSED_VARIABLE")
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_main
+        )
         bottomNavView = binding.bottomNavigationView
 
         navController = this.findNavController(R.id.nav_host_fragment)

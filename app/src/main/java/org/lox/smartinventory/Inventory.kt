@@ -5,9 +5,6 @@ import kotlin.random.Random
 class Inventory (var itemID :String, var itemName :String, var itemStock :String, var predict :String)  {
     lateinit var listItem :MutableList<Inventory>
     var title :String = "Smart Inventory"
-    companion object {
-
-    }
 
     fun initList(){
         listItem = mutableListOf()

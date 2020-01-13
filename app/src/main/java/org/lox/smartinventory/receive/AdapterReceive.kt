@@ -1,4 +1,4 @@
-package org.lox.smartinventory
+package org.lox.smartinventory.receive
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,11 +7,19 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import org.lox.smartinventory.Inventory
+import org.lox.smartinventory.R
 
 class AdapterReceive (var mContext :Context, var list :MutableList<Inventory>) :
     RecyclerView.Adapter<AdapterReceive.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_receive, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(mContext).inflate(
+                R.layout.list_receive,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int = list.size
@@ -27,7 +35,7 @@ class AdapterReceive (var mContext :Context, var list :MutableList<Inventory>) :
         val itemStockText = itemView.findViewById<TextView>(R.id.receive_text_stock)
         val inputText = itemView.findViewById<EditText>(R.id.receive_text_input)
 
-        fun bind(item :Inventory?){
+        fun bind(item : Inventory?){
             apply {
                 itemIdText.text = item?.itemID
                 itemDesText.text = item?.itemName

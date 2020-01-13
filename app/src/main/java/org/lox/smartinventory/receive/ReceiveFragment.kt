@@ -1,4 +1,4 @@
-package org.lox.smartinventory
+package org.lox.smartinventory.receive
 
 
 import android.content.Context
@@ -8,12 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import org.lox.smartinventory.Inventory
+import org.lox.smartinventory.R
 import org.lox.smartinventory.databinding.FragmentReceiveBinding
 
 class ReceiveFragment : Fragment() {
@@ -25,7 +26,8 @@ class ReceiveFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
          binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_receive, container, false)
+            inflater,
+             R.layout.fragment_receive, container, false)
 
         initSpinnerType()
         inventory = Inventory("dsf", "Sdffs", "10", "20")
@@ -65,7 +67,10 @@ class ReceiveFragment : Fragment() {
 
     private fun initRecycler(){
 
-        val adapterInventory = AdapterReceive(context!!.applicationContext, inventory.listItem)
+        val adapterInventory = AdapterReceive(
+            context!!.applicationContext,
+            inventory.listItem
+        )
         binding.listResultReceive.layoutManager = LinearLayoutManager(context!!)
         binding.listResultReceive.adapter = adapterInventory
     }

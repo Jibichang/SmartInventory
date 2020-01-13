@@ -1,25 +1,18 @@
-package org.lox.smartinventory
+package org.lox.smartinventory.main
 
-import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.graphics.Color
 import android.os.Handler
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import androidx.core.os.HandlerCompat.postDelayed
-import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.util.ArrayList
+import org.lox.smartinventory.Inventory
+import org.lox.smartinventory.R
 
 
 class AdapterInventory (var mContext :Context, var list :MutableList<Inventory>)
@@ -49,7 +42,11 @@ class AdapterInventory (var mContext :Context, var list :MutableList<Inventory>)
         }
 
         holder.layout.setOnClickListener {
-            view : View -> view.findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailFragment(list[position].itemID))
+            view : View -> view.findNavController().navigate(
+            MainFragmentDirections.actionMainFragmentToDetailFragment(
+                list[position].itemID
+            )
+        )
             Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_detailFragment)
         }
     }
@@ -61,7 +58,7 @@ class AdapterInventory (var mContext :Context, var list :MutableList<Inventory>)
         val stockItem = itemView.findViewById<TextView>(R.id.text_stock)
         val layout = itemView.findViewById<ConstraintLayout>(R.id.layout_item)
 
-        fun bind(inv :Inventory?){
+        fun bind(inv : Inventory?){
             itemView.apply {
                 idItem.text = inv?.itemID
                 nameItem.text = inv?.itemName

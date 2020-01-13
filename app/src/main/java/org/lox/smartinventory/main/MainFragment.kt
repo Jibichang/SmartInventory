@@ -1,4 +1,4 @@
-package org.lox.smartinventory
+package org.lox.smartinventory.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -13,6 +13,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import org.lox.smartinventory.Inventory
+import org.lox.smartinventory.R
 import org.lox.smartinventory.databinding.FragmentMainBinding
 import org.lox.smartinventory.service.APIUtils
 import retrofit2.Call
@@ -28,9 +30,11 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding :FragmentMainBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_main, container, false)
+            inflater,
+            R.layout.fragment_main, container, false)
 
-        val inv :Inventory = Inventory("dsf", "Sdffs", "10", "20")
+        val inv : Inventory =
+            Inventory("dsf", "Sdffs", "10", "20")
         inv.initList()
         binding.inventory  = inv
 
@@ -44,7 +48,10 @@ class MainFragment : Fragment() {
         adapterReceive.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerOrg.adapter = adapterReceive
 
-        val adapterInventory = AdapterInventory(context!!.applicationContext, inv.listItem)
+        val adapterInventory = AdapterInventory(
+            context!!.applicationContext,
+            inv.listItem
+        )
         binding.recycleInv.layoutManager = LinearLayoutManager(context!!)
         binding.recycleInv.adapter = adapterInventory
 
